@@ -1,0 +1,141 @@
+/* Reset styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Basic styles */
+  body {
+    font-family: Arial, sans-serif;
+  }
+
+.top-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+  header {
+    background-color: #444;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 36px;
+    margin: 0;
+  }
+  
+  main {
+    margin: 20px;
+  }
+  
+  .menu {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .categories {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .category {
+    flex: 1 1 300px;
+    margin: 10px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .category h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .category li {
+    font-size: 18px;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .category li:last-child {
+    border-bottom: none;
+  }
+  
+  .category li span:last-child {
+    font-weight: bold;
+  }
+  
+  @media (max-width: 767px) {
+    .category {
+      flex: 1 1 100%;
+    }
+  }
+  
+  /* buttons */
+  @media only screen and (min-width: 768px) {
+    .button-list {
+      display: flex;
+      justify-content: center;
+      margin-left: 10%;
+    }
+    
+    .button-list button {
+      background-color: #070b07;
+      border: none;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-bottom: 20px;
+      text-align: center;
+      border-radius: 20px;
+    }
+  }
+  
+  /* For screens narrower than 768px */
+  @media only screen and (max-width: 767px) {
+    .button-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 0;
+    }
+    
+    .button-list button {
+      width: 100%;
+      background-color: #070b07;
+      border: none;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-bottom: 20px;
+      text-align: center;
+      border-radius: 20px;
+    }
+  }
