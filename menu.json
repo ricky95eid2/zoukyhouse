@@ -61,7 +61,7 @@
         "price": 0.5
       },
       {
-        "name": "Rise Cake",
+        "name": "Rice Cake",
         "price": 0.5
       },
       {
@@ -122,6 +122,7 @@
       }
   ],
   "Sajj": [
+    
     {
       "name": "Extra",
       "price": 0.3
@@ -145,6 +146,10 @@
     {
       "name": "Labne",
       "price": 1.7
+    },
+    {
+      "name": "Jebne",
+      "price": 1.9
     },
     {
       "name": "Kechek",
@@ -181,6 +186,10 @@
     {
       "name": "Pizza Pepperoni Small",
       "price": 4.5
+    },
+    {
+      "name": "Submarine",
+      "price": 5
     },
     {
       "name": "Pizza Large",
