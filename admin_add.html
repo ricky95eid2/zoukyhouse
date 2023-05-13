@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Product</title>
+    <!-- Import the Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+      }
+  
+      form {
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+  
+      input[type=text], input[type=number] {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        font-size: 16px;
+        color: #333;
+      }
+  
+      label {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        display: block;
+      }
+  
+      button {
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        display: block;
+        margin: 0 auto;
+      }
+  
+      button:hover {
+        background-color: #3e8e41;
+      }
+  
+      select {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        font-size: 16px;
+        color: #333;
+      }
+      .container form {
+        max-width: 600px;
+        margin: auto;
+      }
+
+      .container form h1 {
+        text-align: center;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <h1>Add Product</h1>
+        <label for="category">Category:</label>
+        <select id="category" name="category">
+          <option value="General Products">General Products</option>
+          <option value="Sajj">Sajj</option>
+          <option value="Hot Beverages">Hot Beverages</option>
+          <option value="Cold Beverages">Cold Beverages</option>
+          <option value="Alcohol">Alcohol</option>
+          <option value="Shisha">Shisha</option>
+        </select><br><br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="price">Price:</label>
+        <input type="number" step="0.01" id="price" name="price"><br><br>
+        <button type="button" onclick="addProduct()">Add Product</button>
+      </form>
+    </div>
+
+    <script>
+      var firebaseConfig = {
+                apiKey: "AIzaSyBposqrlKUrs3bIaB1-1WIR10OWLMwWesE",
+                authDomain: "zoukyhouse.firebaseapp.com",
+                projectId: "zoukyhouse",
+                storageBucket: "zoukyhouse.appspot.com",
+                messagingSenderId: "879773953861",
+                appId: "1:879773953861:web:121ed9346a65643759582c",
+                measurementId: "G-X8NYN8T0N1"
+            };
+      firebase.initializeApp(firebaseConfig);
+
+      // Get a reference to the Firestore database
+      var db = firebase.firestore();
+
+      function addProduct() {
+        // Get the values from the form
+        var category = document.getElementById("category").value;
+        var name = document.getElementById("name").value;
+        var price = document.getElementById("price").value;
+
+        // Add the product to the Firestore database
+        db.collection(category).add({
+          name: name,
+          price: parseFloat(price)
+        })
+        .then(function(docRef) {
+          console.log("Document written with ID: ", docRef.id);
+          alert("Item added!!!");
+          location.reload();
+        })
+        .catch(function(error) {
+          console.error("Error adding document: ", error);
+        });
+      }
+    </script>
+  </body>
+</html>
